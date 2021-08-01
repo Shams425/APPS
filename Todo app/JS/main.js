@@ -1,7 +1,7 @@
 //Drage & drop
 const todos = document.querySelectorAll(".taskAdded");
-const all_status = document.querySelectorAll(".continer .todo");
-let draggableTodo = null;
+const all_status = document.querySelectorAll(".todo");
+let TaskDraged = null;
 
 todos.forEach((todo) => {
 todo.addEventListener("dragstart", dragStart);
@@ -9,16 +9,15 @@ todo.addEventListener("dragend", dragEnd);
 });
 
 function dragStart() {
-draggableTodo = this;
+    TaskDraged = this;
 setTimeout(() => {
     this.style.display = "none";
     }, 0);
-    console.log(draggableTodo);
 }
 
 function dragEnd() {
-draggableTodo = null;
-setTimeout(() => {
+    TaskDraged = null;
+    setTimeout(() => {
     this.style.display = "flex";
     }, 0);
 }
@@ -44,9 +43,8 @@ this.style.border = "none";
 
 function dragDrop() {
 this.style.border = "none";
-this.appendChild(draggableTodo);
+this.appendChild(TaskDraged);
 }
-console.log(draggableTodo);
 
 // create & add Elements
 const input = document.querySelector(".modal .body input");
@@ -59,7 +57,7 @@ function create() {
     const span = document.createElement("span");
     const createButton = document.createElement("button");
     const taskCloumn = document.querySelector(".continer  .task");
-    creatediv;
+
     creatediv.classList.add("taskAdded");
     creatediv.setAttribute("draggable" , "true");
     creatediv.setAttribute("id" , "addedTask");
@@ -71,63 +69,23 @@ function create() {
     span.classList.add("close");
     span.setAttribute("id" , "TaskClose");
     span.innerHTML = "&times";
+
     taskCloumn.appendChild(creatediv);
+
     document.querySelector(add.dataset.target).classList.remove("active");
     overlay.classList.remove("activeLay");
     input.value = "";
+
     span.addEventListener("click" , () => {
         span.parentElement.remove();
     });
-    //Drage & drop
-const todos = document.querySelectorAll(".taskAdded");
-const all_status = document.querySelectorAll(".continer  .todo");
-let draggableTodo = null;
 
-todos.forEach((todo) => {
-todo.addEventListener("dragstart", dragStart);
-todo.addEventListener("dragend", dragEnd);
-});
+    creatediv.addEventListener("dragstart", dragStart);
+    creatediv.addEventListener("dragend", dragEnd);
 
-function dragStart() {
-draggableTodo = this;
-setTimeout(() => {
-    this.style.display = "none";
-    }, 0);
-    console.log(draggableTodo);
 }
 
-function dragEnd() {
-draggableTodo = null;
-setTimeout(() => {
-    this.style.display = "flex";
-    }, 0);
-}
-
-all_status.forEach((status) => {
-status.addEventListener("dragover", dragOver);
-status.addEventListener("dragenter", dragEnter);
-status.addEventListener("dragleave", dragLeave);
-status.addEventListener("drop", dragDrop);
-});
-
-function dragOver(e) {
-e.preventDefault();
-}
-
-function dragEnter() {
-this.style.border = "1px dashed black";
-}
-
-function dragLeave() {
-this.style.border = "none";
-}
-
-function dragDrop() {
-this.style.border = "none";
-this.appendChild(draggableTodo);
-    }
-}
-
+//The UI buttons & added taskes
 const add = document.querySelector("#add");
 const modalClose = document.querySelector(".modal .header button");
 const taskClose = document.querySelector(".continer .close");
