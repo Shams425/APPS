@@ -1,6 +1,6 @@
 //Drage & drop
 const todos = document.querySelectorAll(".taskAdded");
-const all_status = document.querySelectorAll(".todo");
+const taskes = document.querySelectorAll(".todo");
 let TaskDraged = null;
 
 todos.forEach((todo) => {
@@ -22,7 +22,7 @@ function dragEnd() {
     }, 0);
 }
 
-all_status.forEach((status) => {
+taskes.forEach((status) => {
 status.addEventListener("dragover", dragOver);
 status.addEventListener("dragenter", dragEnter);
 status.addEventListener("dragleave", dragLeave);
@@ -91,9 +91,16 @@ const modalClose = document.querySelector(".modal .header button");
 const taskClose = document.querySelector(".continer .close");
 const overlay = document.querySelector(".overlay")
 
-add.onclick = () => {
+add.onclick = () => { 
     document.querySelector(add.dataset.target).classList.add("active");
     overlay.classList.add("activeLay");
+    input.focus();
+    input.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            taskadd.click();
+        }
+    })
 };
 
 modalClose.addEventListener("click" , () => {
