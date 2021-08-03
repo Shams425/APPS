@@ -88,29 +88,32 @@ function create() {
 //The UI buttons & added taskes
 const add = document.querySelector("#add");
 const modalClose = document.querySelector(".modal .header button");
-const taskClose = document.querySelector(".continer .close");
+const taskClose = document.querySelectorAll(".continer .close");
 const overlay = document.querySelector(".overlay")
 
 add.onclick = () => { 
     document.querySelector(add.dataset.target).classList.add("active");
     overlay.classList.add("activeLay");
     input.focus();
-    input.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            taskadd.click();
-        }
-    })
-};
+}
+input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        taskadd.click();
+    }
+});
 
 modalClose.addEventListener("click" , () => {
     document.querySelector(add.dataset.target).classList.remove("active");
     overlay.classList.remove("activeLay");
     input.value = "";
 });
-taskClose.addEventListener("click" , () => {
-    const task = document.querySelector("#addedTask");
-    task.style.display = "none";
+taskClose.forEach((close) => {
+   close.addEventListener("click" , () => {
+   const task = document.querySelector("#addedTask");
+   task.style.display = "none"; 
+})
+    
 });
 window.onclick = (click) => {
     if(click.target.matches(".overlay")) {
