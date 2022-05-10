@@ -1,0 +1,51 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  height: 800px;
+}
+
+input:disabled {
+  background-color: white !important;
+}
+
+.showLength {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.notification {
+  position: absolute;
+  bottom: -10%;
+  right: 3%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.notification.active {
+  bottom: 5%;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 420px) {
+  .password {
+    flex-direction: column !important;
+  }
+
+  .password button {
+    width: 60%;
+    margin: 10px 0;
+  }
+}
