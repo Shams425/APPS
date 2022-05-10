@@ -9,13 +9,9 @@ const copyNotification = document.querySelector(".notification");
 let numCheckValue = false;
 let charCheckValue = false;
 
-showLength.textContent = passLength.value;
-
 passLength.addEventListener("input", () => {
   showLength.textContent = passLength.value;
 });
-
-console.log(passwordField.value);
 
 numCheck.addEventListener("click", () => {
   numCheckValue === true ? (numCheckValue = false) : (numCheckValue = true);
