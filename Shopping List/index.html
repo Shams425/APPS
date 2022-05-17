@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="bg-dark text-light text-center p-3">
+        <h1>Shopping List</h1>
+      </nav>
+    </header>
+
+    <section class="Add-items">
+      <div class="container">
+        <div class="row">
+          <div
+            class="my-5 d-flex align-items-center justify-content-between flex-wrap"
+          >
+            <div class="inputField col-lg-8 col-md-6 col-sm-12 my-3">
+              <input
+                type="text"
+                class="form-control items"
+                name=""
+                id=""
+                aria-describedby="helpId"
+                placeholder="Add item"
+              />
+            </div>
+            <div class="configButtons col-lg-4 col-md-6 col-sm-12">
+              <button
+                class="btn btn-outline-success needList"
+                type="button"
+                onclick="addToNeed()"
+              >
+                I Need
+              </button>
+              <button
+                class="btn btn-outline-primary haveList"
+                onclick="addToHave()"
+              >
+                Have it
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="needed-Items mb-5">
+      <div class="container">
+        <div class="title">
+          <h2>Items Needed:</h2>
+          <hr />
+        </div>
+        <ul class="needItemsContainer"></ul>
+      </div>
+    </section>
+
+    <section class="needed-Items my-5">
+      <div class="container">
+        <div class="title">
+          <h2>Had Items:</h2>
+          <hr />
+        </div>
+        <ul class="haveItemsContainer"></ul>
+      </div>
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

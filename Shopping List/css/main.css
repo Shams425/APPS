@@ -1,0 +1,55 @@
+input,
+button {
+  box-shadow: none !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.inputField {
+  padding-right: 10px;
+}
+
+.needItem,
+.haveItem {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+.needItem:hover,
+.haveItem:hover {
+  transform: scale(1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.needItem i:hover,
+.haveItem i:hover {
+  cursor: pointer;
+}
+
+.needItem p,
+.haveItem p {
+  margin-bottom: 0;
+}
+
+.needItem .addToHave:hover,
+.addToNeed:hover {
+  cursor: pointer;
+  color: rgba(98, 231, 80, 0.658);
+  transition: all 0.4s ease;
+}
+
+.haveItem .remove:hover,
+.needItem .remove:hover {
+  cursor: pointer;
+  color: rgba(218, 72, 72, 0.753);
+  transition: all 0.4s ease;
+}
