@@ -13,29 +13,33 @@ let needItems;
 let removeNeedItem;
 
 let needItem;
-
 let haveItem;
 
 function addToNeed() {
   if (addItem.value === "") return;
+  haveItems = document.querySelectorAll(".addToNeed");
   needItem = `<li class="needItem">
                 <p>${addItem.value}</p>
                 <div class= "icons d-flex justify-content-between">
-                  <i class = "fas fa-check mx-3 addToHave"></i>
-                  <i class="fas fa-times remove"></i>
+                <i class = "fas fa-check mx-3 addToHave"></i>
+                <i class="fas fa-times remove"></i>
                 </div>
               </li>`;
 
   needItemContainer.innerHTML += needItem;
+  needItems = document.querySelectorAll(".addToHave");
 
-  getAllValues();
+  console.log(needItems);
+  console.log(haveItems);
 
   addItem.value = "";
   addItem.focus();
 
+  reSelectItems();
+
+  //add the items to have list when click the check mark
   needItems.forEach((item) => {
     item.addEventListener("click", function () {
-      console.log("it's working");
       moveToHave(this.parentElement.parentElement);
       this.parentElement.parentElement.remove();
     });
@@ -50,21 +54,24 @@ function addToNeed() {
 
 function addToHave() {
   if (addItem.value === "") return;
+  needItems = document.querySelectorAll(".addToHave");
   haveItem = `<li class="needItem">
-              <p>${addItem.value}</p>
-              <div class= "icons d-flex justify-content-between">
+                <p>${addItem.value}</p>
+                <div class= "icons d-flex justify-content-between">
                 <i class="fas fa-recycle mx-3 addToNeed"></i>                      
                 <i class="fas fa-times remove"></i>
-              </div>
-            </li>`;
+                </div>
+              </li>`;
 
   haveItemContainer.innerHTML += haveItem;
-
-  getAllValues();
-  console.log(getAllValues());
+  haveItems = document.querySelectorAll(".addToNeed");
+  console.log(haveItems);
+  console.log(needItems);
 
   addItem.value = "";
   addItem.focus();
+
+  reSelectItems();
 
   haveItems.forEach((item) => {
     item.addEventListener("click", function () {
@@ -82,36 +89,31 @@ function addToHave() {
 
 function moveToHave(element) {
   element = element.cloneNode(true);
-  element.children[1].children[0].classList.remove("fa-check");
-  element.children[1].children[0].classList.remove("addToHave");
-  element.children[1].children[0].classList.add("fa-recycle");
-  element.children[1].children[0].classList.add("addToNeed");
+  element.children[1].children[0].classList.remove("fa-check", "addToHave");
+  element.children[1].children[0].classList.add("fa-recycle", "addToNeed");
 
   haveItemContainer.appendChild(element);
-  getAllValues();
-  haveBtn.click();
+  haveItems = document.querySelectorAll(".addToNeed");
+  console.log(haveItems);
+  console.log(needItems);
 }
 
 function moveToNeed(element) {
   element = element.cloneNode(true);
 
-  element.children[1].children[0].classList.add("fa-check");
-  element.children[1].children[0].classList.add("addToHave");
-  element.children[1].children[0].classList.remove("fa-recycle");
-  element.children[1].children[0].classList.remove("addToNeed");
+  element.children[1].children[0].classList.add("fa-check", "addToHave");
+  element.children[1].children[0].classList.remove("fa-recycle", "addToNeed");
 
   needItemContainer.appendChild(element);
-  getAllValues();
-  needBtn.click();
+  needItems = document.querySelectorAll(".addToHave");
+  console.log(haveItems);
+  console.log(needItems);
+  reSelectItems();
 }
 
-function getAllValues() {
-  needItems = document.querySelectorAll(".addToHave");
+function reSelectItems() {
   removeNeedItem = document.querySelectorAll(".remove");
-  haveItems = document.querySelectorAll(".addToNeed");
   removeHaveItem = document.querySelectorAll(".remove");
 
-  return { needItems, removeNeedItem, haveItems, removeHaveItem };
+  return [removeNeedItem, removeHaveItem];
 }
-
-window.addEventListener("click", () => getAllValues());
