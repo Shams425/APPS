@@ -32,7 +32,7 @@ body {
   margin-right: 15px;
 }
 
-.counterStart {
+.btn {
   background-color: yellowgreen;
   border: none;
   border-radius: 15px;
@@ -42,7 +42,7 @@ body {
   width: 80px;
   height: 40px;
   text-align: center;
-  margin-top: 15px;
+  margin: 25px 10px 0;
   cursor: pointer;
 }
 
@@ -53,4 +53,16 @@ select {
   outline: none;
   background: white;
   height: 25px;
+}
+
+.controlButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn:disabled {
+  background-color: rgba(153, 205, 50, 0.267);
+  cursor: default;
 }

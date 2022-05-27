@@ -19,7 +19,10 @@
           <select class="secondsInput" id="" onchange="getValues()"></select>
         </div>
       </form>
-      <button class="counterStart" onclick="timerStart()">Start</button>
+      <div class="controlButtons">
+        <button class="btn counterStart" onclick="timerStart()">Start</button>
+        <button class="btn counterPause" onclick="timerStop()">Pause</button>
+      </div>
     </div>
     <div class="timeContainer"></div>
     <script src="js/main.js"></script>
