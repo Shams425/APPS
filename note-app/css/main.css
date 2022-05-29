@@ -1,0 +1,15 @@
+input,
+button {
+  box-shadow: none !important;
+}
+
+.container-fluid {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.showNote {
+  background-color: #837d7d38;
+  width: 100%;
+  min-height: 30px;
+}
