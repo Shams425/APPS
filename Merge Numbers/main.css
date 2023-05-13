@@ -1,0 +1,96 @@
+body {
+  width: 100vw;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gameUI {
+  display: flex;
+  align-items: center;
+}
+
+.showNextNumbers {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.numbersColumns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 10;
+}
+
+.numbersColumns .gameCol {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.col {
+  border-right: 1px solid black;
+  width: 100px;
+  padding: 3px;
+}
+
+.col:first-of-type {
+  border-left: 1px solid black;
+}
+
+.numCube {
+  border-radius: 10px;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: white;
+}
+
+/* user select */
+.userSelect {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.userSelect .columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+}
+
+.col-user {
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+  margin: 0 12px;
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+  padding: 4px;
+}
+
+.col-user .userInput {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
