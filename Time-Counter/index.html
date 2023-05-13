@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Time Counter</title>
+  </head>
+  <body>
+    <div class="userInput">
+      <form action="" class="timeForm">
+        <div class="userSelect">
+          <label for="select">Minutes:</label>
+          <select class="minutesInput" id="" onchange="getValues()"></select>
+        </div>
+        <div class="userSelect">
+          <label for="select">Seconds :</label>
+          <select class="secondsInput" id="" onchange="getValues()"></select>
+        </div>
+      </form>
+      <div class="controlButtons">
+        <button class="btn counterStart" onclick="timerStart()">Start</button>
+        <button class="btn counterPause" onclick="timerStop()">Pause</button>
+      </div>
+    </div>
+    <div class="timeContainer"></div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

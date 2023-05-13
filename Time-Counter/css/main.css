@@ -1,0 +1,68 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #a53a3a, #6d3fbb);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.timeContainer {
+  font-size: 150px;
+  color: #d9d9d9c4;
+  margin-top: 50px;
+}
+
+.timeForm {
+  display: flex;
+  align-items: center;
+}
+
+.timeForm label {
+  margin-bottom: 10px;
+  color: #d9d9d9c4;
+}
+
+.userSelect {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.btn {
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  color: white;
+  padding: 10px;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  margin: 25px 10px 0;
+  cursor: pointer;
+}
+
+select {
+  width: 150px;
+  margin: 0 15px;
+  border: none;
+  outline: none;
+  background: white;
+  height: 25px;
+}
+
+.controlButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn:disabled {
+  background-color: rgba(153, 205, 50, 0.267);
+  cursor: default;
+}

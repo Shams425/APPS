@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Note app</title>
+  </head>
+  <body>
+    <header class="bg-dark text-center p-3">
+      <p class="text-light">Note-App</p>
+    </header>
+    <section>
+      <div class="container-fluid">
+        <form action="" class="mt-5">
+          <input
+            type="text"
+            class="userInput form-control"
+            placeholder="Add your Note"
+          />
+          <button
+            type="button"
+            class="btn btn-primary mt-2"
+            onclick="addNote()"
+          >
+            Add Note
+          </button>
+        </form>
+        <div class="showNote mt-3 p-3"></div>
+      </div>
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

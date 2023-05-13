@@ -1,0 +1,30 @@
+span {
+  color: rgb(125, 218, 145);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  color: white;
+  background-color: rgb(125, 218, 145);
+  font-size: 30px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+input:focus {
+  box-shadow: none !important;
+  border-color: rgb(125, 218, 145) !important;
+}
+
+input[type="submit"] {
+  height: 60px;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(125, 218, 145) !important;
+  border-color: transparent;
+}

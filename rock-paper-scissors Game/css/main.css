@@ -1,0 +1,57 @@
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  box-shadow: none !important;
+}
+
+.userSelection .select:hover {
+  background-color: #1d90d3;
+  color: white;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.select:active {
+  transform: scale(0.9);
+}
+
+.showResult .User,
+.showResult .Computer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.showResult .Computer .select,
+.showResult .User .select {
+  position: absolute;
+  transform: scaleY(0);
+  width: 0;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+.showResult .select.show {
+  width: 80px;
+  height: 80px;
+  transform: scaleY(1);
+}
+
+.showResult .User .select .fa-hand-scissors {
+  transform: rotateY(180deg);
+}
+
+.showResult p {
+  font-size: 30px;
+}
+
+.resultModal {
+  display: none;
+}

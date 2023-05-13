@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="bg-dark text-center p-3 d-flex justify-content-between">
+      <h1 class="text-light">Guess The Number</h1>
+      <div class="settings-icon" title="settings">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          fill="currentColor"
+          id="gear-icon"
+          class="bi bi-gear text-light"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"
+          />
+          <path
+            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"
+          />
+        </svg>
+      </div>
+    </header>
+
+    <section id="game">
+      <main>
+        <div class="container d-flex align-items-center flex-column">
+          <h3 class="mt-4">
+            Guess a number between 1 to
+            <span class="maxGuess">100</span>
+          </h3>
+          <h3>
+            You have a <span class="attemptNum">5</span> attempts to Guess
+          </h3>
+
+          <div class="winModal">
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="modalBtn btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#modelId"
+            >
+              Launch
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="modelId"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modelTitleId"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">You Win</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <span class="result"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guessHelp mb-3">
+            <div class="alert alert-primary" role="alert">
+              <strong class="guessStatus p-0 m-0"></strong>
+            </div>
+          </div>
+
+          <div class="userGuess d-flex mb-5">
+            <input type="text" class="userNumber form-control" />
+            <button
+              class="btn btn-outline-success"
+              onclick="doGuess()"
+              id="guessBtn"
+            >
+              Guess
+            </button>
+          </div>
+
+          <div class="prevGuess">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Previous Guesses
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body"></div>
+                </div>
+              </div>
+            </div>
+            <div class="playAgain text-center mt-5">
+              <button class="btn btn-primary" onclick="playAgain()">
+                Play again
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- game settings -->
+      <aside class="gameSettings p-3 bg-dark">
+        <div class="settings">
+          <h2 class="text-light">Guess Settings</h2>
+          <form action="">
+            <div class="attemptRange d-flex flex-column my-4">
+              <label for="text" class="text-light mb-3">Guess Range</label>
+              <select
+                class="guessRange form-control"
+                name=""
+                id=""
+                class="form-control"
+              >
+                <option value="25">1-25</option>
+                <option value="50">1-50</option>
+                <option value="75">1-75</option>
+                <option value="100">1-100</option>
+              </select>
+            </div>
+            <label class="text-light" for="text">Number of Attempts</label>
+            <div class="attemptsNum mt-4">
+              <div class="options d-flex align-items-center my-3">
+                <input
+                  class="attemptNum mx-1"
+                  type="radio"
+                  name="attempt"
+                  id=""
+                  checked
+                  value="5"
+                />
+                <label class="text-light" for="">5 attempts</label>
+              </div>
+              <div class="options d-flex align-items-center my-3">
+                <input
+                  class="attemptNum mx-1"
+                  type="radio"
+                  name="attempt"
+                  id=""
+                  value="10"
+                />
+                <label class="text-light" for="">10 attempts</label>
+              </div>
+              <div class="options d-flex align-items-center my-3">
+                <input
+                  class="attemptNum mx-1"
+                  type="radio"
+                  name="attempt"
+                  id=""
+                  value="15"
+                />
+                <label class="text-light" for="">15 attempts</label>
+              </div>
+            </div>
+            <div class="saveChanges">
+              <div
+                role="button"
+                class="btn btn-outline-success save"
+                onclick="saveChanges()"
+              >
+                Save Changes
+              </div>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

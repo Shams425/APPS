@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo app</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="modal" id= "inputData">
+            <div class="header">
+                <h2>Add Task</h2>
+                <button class= "close">&times</button>
+            </div>
+            <div class="body">
+                <input type="text">
+                <button type="submit" id= "plus">Add Task</button>
+            </div>
+        </div>
+        <div class="continer">
+            <div class="todo task" id= "Taskes">
+                <h2>Tasks</h2>
+                <button class = "el" type= "submit" id= "add" data-target= "#inputData">+ Add Task</button>
+            </div>
+            <div class="todo">
+                <h2>Not started</h2>
+            </div>
+            <div class="todo">
+                <h2>On Porgress</h2>
+            </div>
+            <div class="todo">
+                <h2>Completed</h2>
+            </div>
+        </div>
+        <!-- this span just to fix the error of (addEverntListner() of null) -->
+        <span class= "close" id= "fix"></span>
+        <script src= "JS/main.js"></script>
+    </body>
+</html>

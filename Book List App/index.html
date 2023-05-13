@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <!-- main css file -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="mt-5 d-flex justify-content-center align-items-center">
+          <div class="icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h2>My Book <span>List</span></h2>
+        </div>
+      </div>
+    </header>
+
+    <!-- data section -->
+    <section id="data">
+      <div class="container">
+        <form id="formBook" class="mb-3 mt-3">
+          <label for="book name" class="form-label">Book Name</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            name=""
+            id="title"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <label for="author" class="form-label">Author</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            name=""
+            id="author"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <label for="isbn" class="form-label">ISBN</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            name=""
+            id="isbn"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <input
+            type="submit"
+            value="Add Book"
+            class="form-control btn btn-primary"
+            id="addButton"
+          />
+        </form>
+
+        <div class="show-data">
+          <table class="table table-striped mt-5">
+            <thead>
+              <tr>
+                <th id="title">Title</th>
+                <th id="author">author</th>
+                <th id="isbn">isbn</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="data-show"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="assets/JS/script.js"></script>
+  </body>
+</html>

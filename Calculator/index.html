@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calclutor</title>
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id= "main" class= "mainCalc">
+            <div class="calc">
+                <div class="header">
+                    <div type= "text" class="opearations"></div>
+                    <div type="text" class="operatinReslut">0</div>
+                    <div class= "powerInput">
+                        <input class= "power"></span>
+                        <input class= "base"></span>
+                    </div>
+                </div>
+                <div id= "body" class="main">
+                    <div class="scinetific">
+                        <button class="sinceType"><i class= "fas fa-calculator"></i></button>
+                        <button data-operation= "powery">x<sup>y</sup></button>
+                        <button data-operation= "power3">x<sup>3</sup></button>
+                        <button data-operation="sin">sin</button>
+                        <button data-operation="cos">cos</button>
+                        <button data-operation="tan">tan</button>
+                        <button class= "history"><i class= "fas fa-history"></i></button>
+                        <button data-operation= "root"><i class= "fas fa-square-root-alt"></i></button>
+                        <button data-operation= "rooty"><sup>y</sup><i class= "fas fa-square-root-alt"></i></button>
+                        <button data-operation="asin">sin<sup>-1</sup></button>
+                        <button data-operation="acos">cos<sup>-1</sup></button>
+                        <button data-operation="atan">tan<sup>-1</sup></button>
+                        <button data-operation= "power10">10<sup>x</sup></button>
+                        <button data-operation= "log">log</button>
+                        <button data-operation= "ln">ln</button>
+                        <button data-operation="sinh">sinh</button>
+                        <button data-operation="cosh">cosh</button>
+                        <button data-operation="tanh">tanh</button>
+                        <button data-operation= "exp">e<sup>x</sup></button>
+                        <button data-operation= "pi">&pi;</button>
+                        <button data-operation= "factorial">n!</button>
+                        <button data-operation= "asinh">sinh<sup>-1</sup></button>
+                        <button data-operation= "acosh">cosh<sup>-1</sup></button>
+                        <button data-operation= "atanh">tanh<sup>-1</sup></button>
+                        <button data-operation= "power2">x<sup>2</sup></button>
+                        <button data-operation= "clear" class= "CE">CE</button>
+                        <button data-operation= "backspace" class= "delete"><i class= "fas fa-backspace"></i></button>
+                        <button data-operation= "divide"><i class= "fas fa-divide"></i></button>
+                        <button data-operation= "Deg" class= "active" id= "Deg">Deg</button>
+                        <button data-operation= "divby1"><sup>1</sup>/x</button>
+                        <button data-number= "7">7</button>
+                        <button data-number= "8">8</button>
+                        <button data-number= "9">9</button>
+                        <button data-operation= "multiply"><i class= "fas fa-times"></i></button>
+                        <button data-operation= "Rad" id= "Rad">Rad</button>
+                        <button data-operation= "mode">%</button>
+                        <button data-number= "4">4</button>
+                        <button data-number= "5">5</button>
+                        <button data-number= "6">6</button>
+                        <button data-operation= "minus"><i class= "fas fa-minus"></i></button> 
+                        <button data-operation= "Mod">Mod</button> 
+                        <button data-operation= "plus-minus" class= "plus-minus"><i class= "fas fa-plus"></i><i class= "fas fa-minus"></i></button>
+                        <button data-number= "1">1</button>
+                        <button data-number= "2">2</button>
+                        <button data-number= "3">3</button>
+                        <button data-operation= "plus"><i class= "fas fa-plus"></i></button>
+                        <button data-operation= "Ans" class= "ans">Ans</button>
+                        <button data-operation= "left-bracktes">(</button>
+                        <button data-operation= "right-brackets">)</button>
+                        <button data-number= "0">0</button>
+                        <button data-number= ".">.</button>
+                        <button data-operation= "equals"><i class= "fas fa-equals"></i></button> 
+                    </div>
+                    <div class="stander">
+                        <button class="standerType"><i class= "fas fa-calculator"></i></button>
+                        <button data-operation= "mode">%</button>
+                        <button data-operation= "root"><i class= "fas fa-square-root-alt"></i></button>
+                        <button data-operation= "power2">x<sup>2</sup></button>
+                        <button class= "history"><i class= "fas fa-history"></i></button>
+                        <button data-operation= "divby1"><sup>1</sup>/x</button>
+                        <button data-operation= "power3">x<sup>3</sup></button>
+                        <button data-operation= "plus-minus" class= "plus-minus"><i class= "fas fa-plus"></i><i class= "fas fa-minus"></i></button>
+                        <button data-operation= "delete"class= "CE">CE</button>
+                        <button data-operation= "backspace" class= "delete"><i class= "fas fa-backspace"></i></button>
+                        <button data-operation= "divide"><i class= "fas fa-divide"></i></button>
+                        <button data-number= "7">7</button>
+                        <button data-number= "8">8</button>
+                        <button data-number= "9">9</button>
+                        <button data-operation= "multiply"><i class= "fas fa-times"></i></button>
+                        <button data-number= "4">4</button>
+                        <button data-number= "5">5</button>
+                        <button data-number= "6">6</button>
+                        <button data-operation= "minus"><i class= "fas fa-minus"></i></button>
+                        <button data-number= "1">1</button>
+                        <button data-number= "2">2</button>
+                        <button data-number= "3">3</button>
+                        <button data-operation= "plus"><i class= "fas fa-plus"></i></button>
+                        <button data-operation= "Ans">Ans</button>
+                        <button data-number= "0">0</button>
+                        <button data-number= ".">.</button>
+                        <button data-operation= "equals"><i class= "fas fa-equals"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="historyRepo">
+                <div class="header">
+                    <h3>latest Opertions</h3>
+                    <i class= "fas fa-trash fa-3x" title= "Clear History"></i>
+                </div>
+                <div class="body">    
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="modal" id= "modal">
+            <div class="heading">
+                <h4>Data Input</h4>
+                <button class= "close">&times;</button>
+            </div>
+            <div class="content">
+                <label for="text">Y value<input type="number" name="" id="yvalue"></label>
+                <label for="text">X value<input type="number" name="" id="xvalue" required></label>
+
+            </div>
+        </div>
+        <script src= "JS/main.js"></script>
+    </body>
+</html>
