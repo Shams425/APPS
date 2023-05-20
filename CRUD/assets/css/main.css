@@ -1,0 +1,9 @@
+.btn,
+input,
+textarea {
+  box-shadow: none !important;
+}
+
+i.fa-user {
+  font-size: 40px;
+}

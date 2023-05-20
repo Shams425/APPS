@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="userInputs pt-3">
+        <form action="POST">
+          <!-- user name -->
+          <label class="mb-1" for="text">Name :</label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            id="name"
+            placeholder="enter your name"
+          />
+          <!-- user email -->
+          <label class="mb-1" for="email">E-mail :</label>
+          <input
+            type="email"
+            class="form-control mb-3"
+            id="email"
+            placeholder="enter your name"
+          />
+          <!-- user comment -->
+          <label class="mb-1" for="textarea">Comment :</label>
+          <textarea
+            class="form-control mb-3"
+            id="comment"
+            placeholder="type your comment"
+          ></textarea>
+        </form>
+        <div class="actions">
+          <button class="submit btn btn-success">Submit</button>
+          <button class="fetch btn btn-primary">show comments</button>
+        </div>
+      </div>
+
+      <div class="showComments mt-4"></div>
+    </div>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
